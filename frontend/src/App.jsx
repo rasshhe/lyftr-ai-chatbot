@@ -119,13 +119,21 @@ export default function App() {
     <div className="page">
       <header className="header">
         <div>
-          <h1>Lyftr AI Chatbot</h1>
+          <h1 className="brand-title">
+            <span className="sparkle-icon" aria-hidden="true">
+              ✦
+            </span>
+            Lyftr AI Chatbot
+            <span className="bow-pill" aria-hidden="true">
+              ❀
+            </span>
+          </h1>
           <p className="subtitle">
             Session: <code>{sessionId}</code>
           </p>
         </div>
         <button type="button" className="secondary-btn" onClick={handleNewSession}>
-          New Session
+          ✦ New Session
         </button>
       </header>
 
@@ -147,9 +155,14 @@ export default function App() {
         </div>
       )}
 
-      <main className="chat-window">
+      <main className="chat-window cute-frame">
+        <div className="scallop-top" aria-hidden="true" />
+
         {messages.length === 0 && (
           <div className="empty-state">
+            <div className="empty-ornament" aria-hidden="true">
+              ✿ ✦ ✿
+            </div>
             Start a conversation. Each reply includes cache resolution, model, latency, and
             per-request token usage.
           </div>
@@ -176,6 +189,9 @@ export default function App() {
           return (
             <div key={idx} className="message assistant-row">
               <div className="bubble assistant-card" data-testid="assistant-message">
+                <div className="card-corner-star" aria-hidden="true">
+                  ✧
+                </div>
                 <div className="reply-text">{msg.content}</div>
                 <div className="meta-strip">
                   <span className="meta-chip" data-testid="meta-source">
@@ -201,11 +217,12 @@ export default function App() {
 
         {loading && (
           <div className="message assistant-row">
-            <div className="bubble assistant-card">Thinking...</div>
+            <div className="bubble assistant-card">✦ Thinking...</div>
           </div>
         )}
 
         <div ref={endRef} />
+        <div className="scallop-bottom" aria-hidden="true" />
       </main>
 
       <form className="composer" onSubmit={handleSend}>
@@ -222,7 +239,7 @@ export default function App() {
           data-testid="send-button"
           disabled={loading || !input.trim()}
         >
-          Send
+          Send ✦
         </button>
       </form>
     </div>
