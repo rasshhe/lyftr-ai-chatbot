@@ -34,3 +34,5 @@ Full-stack AI chatbot service with a FastAPI + LiteLLM backend, SQLite session p
 ## Deployment
 
 - Run the stack locally with `docker compose up -d --build`, or deploy the `backend` and `frontend` services on your preferred container/cloud host with `LLM_API_KEYS`, `LLM_MODEL`, `LLM_FALLBACK_MODELS`, `DATABASE_URL`, and `ALLOWED_ORIGINS` configured in the environment.
+- Live Backend URL: `https://lyftr-ai-chatbot-1-rn09.onrender.com`
+- Live Frontend URL: `https://lyftr-ai-frontend-7b7s.onrender.com`
